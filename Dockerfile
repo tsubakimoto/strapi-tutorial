@@ -10,6 +10,7 @@ RUN yarn build && yarn --development
 FROM strapi/strapi:3.0.0-beta.17.6-alpine
 WORKDIR /srv/app
 # ENV NODE_ENV="production"
+ENV INSTRUMENTATION_KEY="your-instrumentation-key"
 COPY --from=base /srv/app .
 EXPOSE 1337
 CMD ["yarn", "start"]
