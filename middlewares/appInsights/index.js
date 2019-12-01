@@ -8,7 +8,7 @@ module.exports = strapi => {
                 strapi.log.debug('app insights started');
 
                 let client = appInsights.defaultClient;
-                client.trackTrace({message: "trace message 2"});
+                client.trackTrace({message: "trace message from strapi"});
 
                 await next();
             });
