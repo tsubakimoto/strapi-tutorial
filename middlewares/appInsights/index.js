@@ -3,7 +3,7 @@ module.exports = strapi => {
         initialize() {
             strapi.app.use(async (ctx, next) => {
                 const appInsights = require("applicationinsights");
-                appInsights.setup(process.env.INSTRUMENTATION_KEY);
+                appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY);
                 appInsights.start();
                 strapi.log.debug('app insights started');
 
